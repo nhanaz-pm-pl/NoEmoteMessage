@@ -9,11 +9,12 @@ use pocketmine\event\server\DataPacketSendEvent;
 use pocketmine\network\mcpe\protocol\StartGamePacket;
 use pocketmine\plugin\PluginBase;
 
-final class Main extends PluginBase {
+class Main extends PluginBase {
 
-	public function onEnable(): void {
+	protected function onEnable(): void {
 		$this->getServer()->getPluginManager()->registerEvent(DataPacketSendEvent::class, function (DataPacketSendEvent $event): void {
-			foreach ($event->getPackets() as $packet) {
+			$packets = $event->getPackets();
+			foreach ($packets as $packet) {
 				if ($packet instanceof StartGamePacket) {
 					$packet->levelSettings->muteEmoteAnnouncements = true;
 				}
