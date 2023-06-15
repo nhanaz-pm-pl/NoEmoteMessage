@@ -1,0 +1,10 @@
+---
+name: NoEmoteMessage
+version: 0.0.1
+main: NhanAZ\NoEmoteMessage\Main
+api: 5.0.0
+
+website: https://github.com/NhanAZ
+author: NhanAZ
+description: A plugin that intercepts annoying messages when players use emotes
+...
